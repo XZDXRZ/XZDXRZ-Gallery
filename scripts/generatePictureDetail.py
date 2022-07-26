@@ -49,8 +49,8 @@ def writeHTML(pictureID, sourceCode):
         page.write(sourceCode)
 
 if __name__ == "__main__":
-    page_index = 2
+    page_index = 7
     picture_type = 'jpg'
-    page_title = 'Hipper in flower house'
+    page_title = 'Lantern festival'
     source_code = generateSourceCode(page_index, picture_type, page_title)
     writeHTML(page_index, source_code)
