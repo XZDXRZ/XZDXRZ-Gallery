@@ -2,6 +2,36 @@
     box-sizing: border-box;
 }
 
+#display {
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 5%;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+}
+
+#image {
+    width: 60%;
+    text-align: center;
+}
+
+#download {
+    text-decoration: none;
+    margin: 30px;
+    background-color: deeppink;
+    display: inline-block;
+    padding: 30px;
+    font-size: 18px;
+    color: antiquewhite;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
 #nav_top {
     background-color: hotpink;
     height: 50px;
@@ -45,6 +75,5 @@ footer {
     background-color: lightslategray;
     position: absolute;
     left: 0;
-    padding-left: 10%;
     text-align: center;
 }
