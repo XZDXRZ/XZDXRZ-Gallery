@@ -36,6 +36,9 @@ def insertCode(target_index, HTMLcode, pictureCode):
         page.write(HTMLcode)
 
 if __name__ == "__main__":
+    picture_index = 8
+    picture_title = 'Shokaku'
+    picture_type = 'jpg'
     targetIndex, html = getTargetRowIndex()
-    pictureCode = getPictureCode(8, 'Shokaku', 'jpg')
+    pictureCode = getPictureCode(picture_index, picture_title, picture_type)
     insertCode(targetIndex, html, pictureCode)
