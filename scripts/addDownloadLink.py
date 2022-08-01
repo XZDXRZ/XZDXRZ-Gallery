@@ -4,8 +4,8 @@ import re
 
 code = [
     '\t\t\t<tr>\n',
-    '\t\t\t\t<th>', '</th>\n',
-    '\t\t\t\t<th><a href="', '">', '</th>\n',
+    '\t\t\t\t<td>', '</td>\n',
+    '\t\t\t\t<td><a href="', '">', '</td>\n',
     '\t\t\t</tr>\n'
 ]
 
@@ -25,7 +25,8 @@ def getTitleLink(pictureIndex):
             find_result = re.findall('<img id="image"[\d\D]*?/>', line)
             if find_result != []:
                 link = find_result[0][21:-31]
-    return title, link
+                picType = find_result[0][33:37]
+    return title, link, picType
 
 def findDownload():
     with open("./downloads/index.html", 'r') as downloadF:
@@ -33,12 +34,11 @@ def findDownload():
         i=1
         for line in page:
             if re.findall("</table>", line):
-                return i-1
+                return i-1, page
             i+=1
 
-def addLink(lineIndex, HTMLCode, title, link):
+def addLink(lineIndex, HTMLcode, title, link, picType):
     with open("./downloads/index.html", 'w') as page:
-        HTMLcode = page.readline()
         indexAdder = (i for i in range(0, 10))
         HTMLcode.insert(lineIndex+next(indexAdder), code[0])
         HTMLcode.insert(lineIndex+next(indexAdder), code[1])
@@ -47,13 +47,13 @@ def addLink(lineIndex, HTMLCode, title, link):
         HTMLcode.insert(lineIndex+next(indexAdder), code[3])
         HTMLcode.insert(lineIndex+next(indexAdder), link)
         HTMLcode.insert(lineIndex+next(indexAdder), code[4])
-        HTMLcode.insert(lineIndex+next(indexAdder), title)
+        HTMLcode.insert(lineIndex+next(indexAdder), title+picType)
         HTMLcode.insert(lineIndex+next(indexAdder), code[5])
         HTMLcode.insert(lineIndex+next(indexAdder), code[6])
         HTMLcode = "".join(HTMLcode)
         page.write(HTMLcode)
 
 if __name__ == "__main__":
-    title, link = getTitleLink(2)
-    line = findDownload()
-    addLink(line, title, link)
+    title, link, picType = getTitleLink(9)
+    line, HTMLcode = findDownload()
+    addLink(line, HTMLcode, title, link, picType)

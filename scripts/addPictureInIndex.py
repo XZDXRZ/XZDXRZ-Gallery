@@ -23,7 +23,7 @@ def getTargetRowIndex():
         row_index = 0
         target_index = -1
         for code in HTMLcode:
-            row_index+=1
+            row_index += 1
             if re.findall(r'<div class="picture">',code) != []:
                 target_index = row_index + 3
         return target_index, HTMLcode
