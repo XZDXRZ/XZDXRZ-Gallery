@@ -3,12 +3,15 @@
 
 var picWidth, picHeight;
 
-picHeight = document.getElementsByClassName("images")[0].clientHeight;
-picWidth = document.getElementsByClassName("images")[0].clientWidth;
+pic = document.getElementsByClassName("images");
+
+picHeight = pic[0].height;
+picWidth = pic[0].width;
 
 picTitle = document.getElementsByClassName("title");
 
 for (var i=0;i<picTitle.length;i++) {
+    pic[i].style.width = picWidth + "px";
     picTitle[i].style.width = picWidth + "px";
-    picTitle[i].style.marginTop = picHeight*-0.06+"px";
+    picTitle[i].style.marginTop = picHeight*(-0.055)+"px";
 }

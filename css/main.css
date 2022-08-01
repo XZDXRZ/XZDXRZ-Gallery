@@ -10,9 +10,12 @@
     border-top-left-radius: 10px;
 }
 
+p, a {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+}
+
 .title {
     font-size: 30px;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
     position: absolute;
     background-color: antiquewhite;
     border-bottom-right-radius: 10px;
@@ -28,7 +31,7 @@
 
 #display {
 	margin-left: 20%;
-	margin-right: 10%;
+	margin-right: 20%;
 }
 
 #nav_top {
