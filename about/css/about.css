@@ -12,20 +12,25 @@ p, a {
 }
 
 #nav_top {
-    background-color: hotpink;
-    height: 50px;
-    width: 100%;
-    text-align: center;
-    font-size: 35px;
-    position: fixed;
-    top: 0;
-    left: 0;
     z-index: 9;
 }
 
-/*
-* Trying to make the div just beside the other div.
-*/
+#nav_top > ul {
+    text-align: center;
+    font-size: 35px;
+    background-color: hotpink;
+    display: inline-flex;
+    list-style-type: none;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+
+#nav_top > ul > li > a {
+    text-decoration: none;
+    color: aliceblue;
+}
 
 .nav_top_link {
     display: inline-block;
@@ -39,12 +44,6 @@ p, a {
     background-color: lightpink;
     display: inline-block;
     height: 100%;
-}
-
-#nav_top > nav > a {
-    vertical-align: middle;
-    text-decoration: none;
-    color: aliceblue;
 }
 
 footer {
