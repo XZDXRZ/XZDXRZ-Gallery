@@ -36,8 +36,19 @@ h1 {
     border-top-right-radius: 5px;
 }
 
+#logo {
+    display: inline-flex;
+    z-index: 9;
+    width: 20%;
+}
+
 #nav_top {
     z-index: 9;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 #nav_top > ul {
@@ -47,9 +58,10 @@ h1 {
     display: inline-flex;
     list-style-type: none;
     justify-content: center;
-    align-items: flex-start;
+    align-items: stretch;
     margin: 0;
     width: 100%;
+    padding: 0;
 }
 
 #nav_top > ul > li > a {
@@ -58,16 +70,18 @@ h1 {
 }
 
 .nav_top_link {
-    display: inline-block;
+    display: inline-flex;
     text-align: center;
-    width: 230px;
+    width: 200px;
     height: 100%;
+    align-items: center;
+    justify-content: center;
     background-color: hotpink;
 }
 
 .nav_top_link:hover {
     background-color: lightpink;
-    display: inline-block;
+    display: inline-flex;
     height: 100%;
 }
 
